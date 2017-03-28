@@ -19,6 +19,12 @@ h1 {
   border-radius: 5px;
 
 }
+.time {
+  color: #adebad;
+  margin: auto;
+  padding: inherit;
+
+}
 .navbar {
 
 border: 2px solid #42f4eb;
