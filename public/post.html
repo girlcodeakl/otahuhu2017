@@ -2,21 +2,21 @@
 <html>
   <head>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+    <title>express</title>
     <meta charset='utf-8'>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
       <form method="post" action="/posts"class= "myform">
-          <input type="text" name="message" placeholder="message goes here"  class= "messageInput">
+          <input type="text" name="message" placeholder="love letters go here"  class= "messageInput">
 
-              <input type="text" name="photo" placeholder=" picture url goes here"class= "photoInput">
-          <input type="submit" value="Submit">
+              <input type="text" name="photo" placeholder=" idols url go here"class= "photoInput">
+          <input type="submit" value="kpop power go">
           <div class="navbar">
             <div class="note"></div>
-            <a href="feed.html">read </a>
-            <a href="post.html">post</a>
-            <a href="index.html"> home</a>
+            <a href="feed.html">see your idols</a>
+            <a href="post.html">express</a>
+            <a href="index.html">kpop home</a>
           </div>
 
       </form>
@@ -27,7 +27,7 @@ var myCoolFunction = function (e) {
 data.message = $(".messageInput").val();
 data.photo = $(".photoInput").val();
          $.post( "/posts" , data );
-$(".note").text("Thanks! Your message was saved!");
+$(".note").text("Thanks! Your kpoping was saved!");
 }
 $(".myform").on("submit", myCoolFunction);
 </script>
