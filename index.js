@@ -11,6 +11,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+var database = null;
+
 //make an empty list
 var posts = [];
 
@@ -30,6 +32,9 @@ var saveNewPost = function (request, response) {
   posts.push(post); //save it in our list
   response.send("thanks for your message. Press back to add another");
   post.time = new Date();
+  //save to database
+  var dbPosts = database.collection('posts');
+  dbPosts.insert(post);
 }
 app.post('/posts', saveNewPost);
 
@@ -37,3 +42,20 @@ app.post('/posts', saveNewPost);
 //listen for connections on port 3000
 app.listen(process.env.PORT || 3000);
 console.log("Hi! I am listening at http://localhost:3000");
+
+
+var mongodb = require('mongodb');
+var uri = 'mongodb://admin:123wow@ds149700.mlab.com:49700/caughtinalie';
+mongodb.MongoClient.connect(uri, function(err, newdb) {
+  if(err) throw err;
+  console.log("yay we connected to the database");
+  database = newdb;
+  var dbPosts = database.collection('posts');
+  dbPosts.find(function (err, cursor) {
+    cursor.each(function (err, item) {
+      if (item != null) {
+        posts.push(item);
+      }
+    });
+  });
+});
