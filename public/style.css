@@ -3,7 +3,7 @@ body {
 }
 
 .message-list {
-  background-color: #42b3f4;
+  background-color: #8056BA;
   padding: 20px;
 }
 
@@ -12,10 +12,10 @@ h1 {
 }
 
 .message {
-  color: #468966;
+  color: #000000;
   margin: 10px;
   padding: 15px;
-  border: 2px solid #FFB03B;
+  border: 2px solid #2B1E28;
   border-radius: 5px;
 
 }
@@ -27,9 +27,9 @@ h1 {
 }
 .navbar {
 
-border: 2px solid #42f4eb;
-    color: pink;
-      background-color: #42b3f4;
+border: 2px solid #0A1B1B;
+    color: #282D7F;
+      background-color: #700B32;
         padding: 20px;
         margin: 15px;
 
