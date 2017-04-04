@@ -29,6 +29,7 @@ var saveNewPost = function (request, response) {
   post.photo = request.body.photo;
   posts.push(post); //save it in our list
   response.send("thanks for your message. Press back to add another");
+  post.time = new Date();
 }
 app.post('/posts', saveNewPost);
 
