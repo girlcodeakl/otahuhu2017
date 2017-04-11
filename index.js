@@ -29,6 +29,10 @@ var saveNewPost = function (request, response) {
   var post = {};
   post.message = request.body.message;
   post.photo = request.body.photo;
+  if(post.photo===""){ post.photo="https://www.dramafever.com/st/news/images/09273e9f-843b-4468-8caf-ae1afb3029ec.jpg"
+
+
+  }
   posts.push(post); //save it in our list
   response.send("thanks for your message. Press back to add another");
   post.time = new Date();
