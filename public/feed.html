@@ -16,12 +16,18 @@
       <a href="index.html">kpop home</a>
     </div>
     <h1 class="title">Kpopers feed</h1>
+    <input type="text" name="message" placeholder="search for idols"  class= "filter">
     <div class="message-list">
     </div>
 
     <script>
 //Hello! This is the start of the JavaScript.
-
+var filterfunction = function() {
+var searchtext = $(".filter").val();
+$(".message-list").children().each(function(number, postNode) {
+//code in here will be run once for each post in the list
+});
+}
 var displayMessage = function(post) {
   ///hack: fix invalid dates
 if (post.time === undefined) {
